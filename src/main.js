@@ -8,14 +8,15 @@ import {Header} from 'mint-ui'
 Vue.component(Header.name, Header)
 
 import './lib/mui/css/mui.min.css'
-
+import './lib/mui/css/icons-extra.css'
 // 导入路由的包
-// import VueRouter from 'vue-router'
-// Vue.use(VueRouter)
-
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+import router from './router.js'
 
 var vm = new Vue({
   el:'#app',
   data:{},
-  render:c=>c(app)
+  render:c=>c(app),
+  router
 })
