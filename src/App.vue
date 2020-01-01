@@ -2,7 +2,7 @@
   <div class="app-contains">
 
     <!-- 顶部 header -->
-    <mt-header fixed title="固定在顶部"></mt-header>
+    <mt-header fixed title="黑马程序员"></mt-header>
 
     <!-- 中间路由 -->
 
@@ -27,7 +27,9 @@
 			</router-link>
 		</nav>
 
-    <router-view></router-view>
+	<transition>
+		 <router-view></router-view>
+	</transition>
    
   </div>
 </template>
@@ -39,5 +41,22 @@
 <style lang="scss" scoped>
 .app-contains{
   padding-top: 40px;
+  overflow-x: hidden;
+}
+
+.v-enter{
+	opacity: 0;
+	transform: translateX(100%)
+}
+.v-leave-to{
+	opacity: 0;
+	transform: translateX(-100%);
+	position: absolute;
+}
+
+.v-enter-active,
+.v-leave-acitve{
+	opacity: 1;
+	transition: all 0.4s ease;
 }
 </style>
