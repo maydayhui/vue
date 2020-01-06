@@ -15,15 +15,16 @@ Vue.use(VueRouter)
 import router from './router.js'
 
 // 轮播图
-import { Swipe, SwipeItem } from 'mint-ui';
+import { Swipe, SwipeItem, Button } from 'mint-ui';
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
 
 // 导入vue-resource 
 import resource from 'vue-resource'
 Vue.use(resource)
 // 设置请求跟路径
-Vue.http.options.root = "http://www.escook.cn:3000/"
+Vue.http.options.root = "http://www.liulongbin.top:3005"
 
 // 导入时间插件
 import moment from 'moment'
