@@ -6,17 +6,17 @@
   <textarea placeholder="输入评论（最多120字）" maxlength="120"></textarea>
   <mt-button type="primary" size="large">发表评论</mt-button>
   <div class="cmt-list">
-    <div class="cmt-item">
+    <div class="cmt-item" v-for="(item, i ) in comments" :key="i">
       <div class="cmt-title">
-        第1楼 &nbsp;&nbsp; 用户:匿名&nbsp;&nbsp; 发表时间：2020-01-01 05:05:05
+        第{{ i + 1 }}楼 &nbsp;&nbsp; 用户:{{ item.user_name }}&nbsp;&nbsp; 发表时间：{{ item.add_time | dataFormat}}
       </div>
       <div class="cmt-body">
-         天下之大 无奇不有
+         {{ item.content }}
       </div>
      
     </div>
   </div>
-  <mt-button type="danger" size="large">加载更多</mt-button>
+  <mt-button type="danger" size="large" plain @click="getMore">加载更多</mt-button>
   </div>
 </template>
 <script>
@@ -39,8 +39,14 @@ export default {
           Toast("获取评论失败")
         }
       })
-    }
+    },
+    getMore(){
+    this.pageIndex++;
+    this.getComments()
+
   }
+  },
+  
 }
 </script>
 
