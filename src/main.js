@@ -25,6 +25,8 @@ import resource from 'vue-resource'
 Vue.use(resource)
 // 设置请求跟路径
 Vue.http.options.root = "http://www.liulongbin.top:3005"
+// 全局设置 post 时候表单数据格式组织形式   application/x-www-form-urlencoded
+Vue.http.options.emulateJSON = true;
 
 // 导入时间插件
 import moment from 'moment'
